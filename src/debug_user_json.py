@@ -8,6 +8,7 @@ class DebugUserJson(UserForm):
     payment = None
     city = None
 
+    @property
     def user_input_int(self):
         """
         Проверка на наличие ошибок ввода
@@ -15,7 +16,8 @@ class DebugUserJson(UserForm):
         """
         self.payment = input("Введите минимальную заработную плату: ")
         if self.payment.isalpha():
-            raise ValueError("Неверно указана зарплата. Убедитесь, что указано число.")
+            raise ValueError("Неверно указана зарплата. Убедитесь, "
+                             "что указано число.")
         if self.payment == "":
             self.payment = 0
         return int(self.payment)

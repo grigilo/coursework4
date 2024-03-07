@@ -8,6 +8,7 @@ class UserInteractionHeadHunter(HHRequestDebug):
     """
     Класс взаимодействия пользователя с сайтом HeadHunter
     """
+
     def hh_user_search(self):
         """
         Метод для поиска вакансий на HeadHunter
@@ -22,6 +23,7 @@ class UserInteractionJson(DebugUserJson):
     """
     Класс взаимодействия пользователя с файлом Json
     """
+
     def json_user_search(self):
         """
         Метод сортировки вакансий Json файла
@@ -29,7 +31,7 @@ class UserInteractionJson(DebugUserJson):
         vacancies_list = []
         json_file = SortedVacancy()
         json_vacancies = json_file.sorted_vacancies_hh
-        payment = self.user_input_int()
+        payment = self.user_input_int
         city = self.user_input_str()
         for vacancies in json_vacancies:
             if payment > vacancies["payment_1"]:
@@ -39,12 +41,15 @@ class UserInteractionJson(DebugUserJson):
             if city == "":
                 vacancies_list.append(vacancies)
         for result in vacancies_list:
-            print(f"Город: {result['city']}\nДата публикации: {result['date']}\n"
-                  f"Должность: {result['name']}\nТребование: {result['skill_1']}\n"
-                  f"Ответственность: {result['skill_2']}\nЗарплата от {result['payment_1']}\n"
-                  f"Зарплата до {result['payment_2']}\n")
+            print(
+                f"Город: {result['city']}\nДата публикации: {result['date']}\n"
+                f"Должность: "
+                f"{result['name']}\nТребование: {result['skill_1']}\n"
+                f"Ответственность: "
+                f"{result['skill_2']}\nЗарплата от {result['payment_1']}\n"
+                f"Зарплата до {result['payment_2']}\n")
         if len(vacancies_list) == 0:
-            print(f'Результатов 0')
+            print('Результатов 0')
 
 
 if __name__ == '__main__':

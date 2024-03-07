@@ -35,4 +35,3 @@ class Vacancy:
         Магический метод repr
         """
         return f"{self.__class__.__name__}({self.__name, self.__page})"
-

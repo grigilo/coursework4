@@ -10,6 +10,7 @@ class GetHeadHunter(VacancyAPY, Vacancy):
     Класс для получения вакансий с HeadHunter
     с наследованием от VacancyAPY, Vacancy
     """
+
     def __init__(self, name, top_n):
         """
         Создание экземпляра класса GetHeadHunter
@@ -51,7 +52,8 @@ class GetHeadHunter(VacancyAPY, Vacancy):
         :return: json
         """
         with open(FILE, "w", encoding="utf-8") as file:
-            file.write(json.dumps(self.get_vacancy, indent=4, ensure_ascii=False))
+            file.write(json.dumps(self.get_vacancy, indent=4,
+                                  ensure_ascii=False))
 
 
 if __name__ == '__main__':

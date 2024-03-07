@@ -29,7 +29,8 @@ class SortedVacancy:
             if i["salary"]["to"] is None:
                 i["salary"]["to"] = 0
             if i["published_at"]:
-                date = datetime.strptime(i["published_at"], "%Y-%m-%dT%H:%M:%S+%f")
+                date = datetime.strptime(i["published_at"],
+                                         "%Y-%m-%dT%H:%M:%S+%f")
                 self.date_format = f"{date:%d.%m.%Y}"
             self.head_hunter_sorted.append({
                 "name": i["name"],
